@@ -9,6 +9,12 @@ resource "aws_instance" "web" {
   tags = {
     Name = "stage-tf-rishav-ec2"
   }
+  user_data = <<EOF
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install nginx -y
+echo "Hi Rishav " >/var/www/html/index.nginx-debian.html
+EOF
 }
 
 
