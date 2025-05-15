@@ -7,9 +7,9 @@ variable "ami" {
 variable "instance_type" {
   type = string
 }
-variable "access_key" {
+variable "ACCESS_KEY" {
   type = string
 }
-variable "secret_key" {
+variable "SECRET_KEY" {
   type = string
 }
