@@ -35,8 +35,17 @@ EOF
     }
   }
   provisioner "local-exec" {
-    when = destroy
+    when    = destroy
     command = "echo 'at destroy'"
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "ifconfig > /tmp/ifconfig.output",
+      "echo 'Hello Rishav' >/tmp/test.txt"
+    ]
+  }
+  provisioner "remote-exec" {
+    script = "./testscript.sh"
   }
 }
 
