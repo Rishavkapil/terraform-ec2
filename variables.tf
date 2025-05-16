@@ -2,9 +2,18 @@
 variable "ports" {
   type = list(number)
 }
-variable "ami" {
+variable "instance_type" {
   type = string
 }
-variable "instance_type" {
+variable "image_name" {
+  type = string
+}
+variable "owner_name" {
+  type = string
+}
+variable "root_volume_type" {
+  type = string
+}
+variable "virtualization_type" {
   type = string
 }
