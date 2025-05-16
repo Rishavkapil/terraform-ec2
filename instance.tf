@@ -15,6 +15,17 @@ sudo apt-get update
 sudo apt-get install nginx -y
 echo "Hi Rishav " >/var/www/html/index.nginx-debian.html
 EOF
+  provisioner "file" {
+    source = "README.md"
+    destination = "/tmp/README.md"
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = file("${path.module}/id_rsa")
+      host = "${self.public_ip}"
+    }
+  }
+
 }
 
 
